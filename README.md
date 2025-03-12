@@ -5,13 +5,13 @@
 ### Week 07 - Milestone 01
 **Write a one-paragraph idea for your visual collection**
 
-For this project, I would like to expand on our week 01 assignment, where we choose 10 artefacts and sketched out different ways on how to present them. I chose magnets as the theme for my 10 artefacts. They were collected from places I have travelled to.
+For this project, I would like to expand on our Week 01 assignment, where we choose 10 artefacts and sketched out different ways on how to present them. The artifacts I chose follow the theme of magnets. They were collected from places I have travelled to.
 
 The categories on how I would like to group them are as follows:
 - **Continent:** North America, Europe, Oceania, Asia
 - **Material:** Metal, Wood, Ceramic, Vinyl
 
-If possible, the magnets can also be sorted by
+If possible, the magnets can also be sorted by:
 - **Alphabetical order:** (A-Z, Z-A)
 - **Chronologically:** (Earliest-oldest, Oldest-earliest)
 
@@ -30,6 +30,6 @@ The goal is to think critically about curation, classification, and the relation
 - Provide an index and filtering interface (search is optional).
 
 ## Final Deliverables
-**Due Week 10, Apr 3rd**
+**Due Week 10, April 3rd**
 - **Final Visual Collection:** A front-end interface with a collection of at least 10-15 items, including categories and other metadata, that can be viewed and filtered in different ways.
 - **Reflection Paper (500+ words):** Think about: Why this collection? How did you make decisions regarding what to include and what not to include? How does structuring and classifying the collection affect interpretation? How did you make your design decisions and how do these affect the process of navigation and discovery? How does the inclusion of JavaScript affect the digital experience?
