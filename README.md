@@ -30,6 +30,6 @@ The goal is to think critically about curation, classification, and the relation
 - Provide an index and filtering interface (search is optional).
 
 ### Final Deliverables
-- **due Week 10, Apr 3rd**
+**Due Week 10, Apr 3rd**
 - **Final Visual Collection:** A front-end interface with a collection of at least 10-15 items, including categories and other metadata, that can be viewed and filtered in different ways.
 - **Reflection Paper (500+ words):** Think about: Why this collection? How did you make decisions regarding what to include and what not to include? How does structuring and classifying the collection affect interpretation? How did you make your design decisions and how do these affect the process of navigation and discovery? How does the inclusion of JavaScript affect the digital experience?
