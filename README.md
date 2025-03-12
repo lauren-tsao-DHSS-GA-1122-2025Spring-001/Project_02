@@ -13,7 +13,7 @@ The categories on how I would like to group them are as follows:
 
 If possible, the magnets can also be sorted by alphabetical order and chronologically.
 
-Link to the magnets can be found [here].(https://drive.google.com/drive/folders/15-jNCUc9K8didKvfGxyD4LemqsY42Qd3?usp=sharing)
+Link to the magnets can be found [here](https://drive.google.com/drive/folders/15-jNCUc9K8didKvfGxyD4LemqsY42Qd3?usp=sharing).
 
 
 ### Week 10 - Final Deliverables
