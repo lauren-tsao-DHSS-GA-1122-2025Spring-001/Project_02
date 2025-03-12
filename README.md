@@ -11,9 +11,11 @@ The categories on how I would like to group them are as follows:
 - **Continent:** North America, Europe, Oceania, Asia
 - **Material:** Metal, Wood, Ceramic, Vinyl
 
-If possible, the magnets can also be sorted by alphabetical order and chronologically.
+If possible, the magnets can also be sorted by
+- **Alphabetical order:** (A-Z, Z-A)
+- **Chronologically:** (Earliest-oldest, Oldest-earliest)
 
-Link to the magnets can be found [here](https://drive.google.com/drive/folders/15-jNCUc9K8didKvfGxyD4LemqsY42Qd3?usp=sharing).
+Link to the magnets can be found [**here**](https://drive.google.com/drive/folders/15-jNCUc9K8didKvfGxyD4LemqsY42Qd3?usp=sharing).
 
 
 ### Week 10 - Final Deliverables
