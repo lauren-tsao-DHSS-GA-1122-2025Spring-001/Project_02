@@ -9,7 +9,7 @@ For this project, I would like to expand on our Week 01 assignment, where we cho
 
 The categories on how I would like to group them are as follows:
 - **Continent:** North America, Europe, Oceania, Asia
-- **Material:** Metal, Wood, Ceramic, Vinyl
+- **Material:** Metal, Wood, Ceramic, Vinyl, Plastic
 
 If possible, the magnets can also be sorted by:
 - **Alphabetical order:** (A-Z, Z-A)
