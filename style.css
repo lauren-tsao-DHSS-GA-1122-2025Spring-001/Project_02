@@ -3,25 +3,49 @@ html {
     font-family: sans-serif;
   }
   
-body {
+/* main heading */
+  .heading {
+    position: fixed;
+    width: 100vw;
     display: flex;
+    justify-content: space-between;
+  }
+  
+  h1 {
+    font-size: 100px;
+    margin: 10px;
+    font-weight: 500;
+  }
+  
+  hr {
+    margin: 20px;
+    margin-top: 65px;
+  }
+  
+/* rest of content */
+  .content {
+    position: relative;
+    top: 155px;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
 }
+
 
   #left-sidebar {
 position: fixed;
 align-items: left;
-width: 40vw;
+width: 20vw;
 }
 
 fieldset {
     margin: 50px;
 }
 
-  div:first-of-type {
+  /* div:first-of-type {
     display: flex;
     align-items: flex-start;
     margin-bottom: 5px;
-  }
+  } */
   
   label {
     margin-right: 15px;
@@ -57,11 +81,10 @@ fieldset {
     font-size: 14px;
   }
 
-
 /* magnets */
 .grid {
     position: relative;
-    left: 40vw;
+    left: 25vw;
     max-width: 500px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -80,9 +103,26 @@ fieldset {
   .grid > * {
     border-radius: 50%;
     border: 1px black solid;
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  /* right-sidebar */
+  
+  #right-sidebar {
+    position: fixed;
+    right: 0px;
+    align-items: right;
+    width: 10vw;
+  }
+
+h2 {
+  font-weight: 44px;
+}
+
+  p {
+    margin-bottom: 66px;
   }

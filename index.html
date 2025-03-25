@@ -1,84 +1,116 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <section id="left-sidebar">
-            <!-- Continents -->
-            <fieldset>
-                <legend>Continent</legend>
-              
-                <div>
-                  <input type="radio" id="asia" name="continent" value="asia" checked />
-                  <label for="asia">Asia</label>
-                </div>
-              
-                <div>
-                  <input type="radio" id="europe" name="continent" value="europe" />
-                  <label for="europe">Europe</label>
-                </div>
-              
-                <div>
-                  <input type="radio" id="north-america" name="continent" value="north-america" />
-                  <label for="north-america">North America</label>
-                </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-                <div>
-                    <input type="radio" id="oceania" name="continent" value="oceania" />
-                    <label for="oceania">Oceania</label>
-                  </div>
-              </fieldset>
+  <body>
+    <div class="heading">
+    <h1>10</h1>
+    <hr width="100%;" color="black" size="7">
+    <h1>magnets</h1>
+  </div>
+    <div class="content">
+    <section id="left-sidebar">
+      <!-- Continents -->
+      <fieldset>
+        <legend>Continent</legend>
 
-               <!-- Material -->
-            <fieldset>
-                <legend>Material</legend>
-              
-                <div>
-                  <input type="radio" id="ceramic" name="material" value="ceramic" checked />
-                  <label for="ceramic">Asia</label>
-                </div>
-              
-                <div>
-                  <input type="radio" id="metal" name="material" value="metal" />
-                  <label for="metal">Metal</label>
-                </div>
-              
-                <div>
-                    <input type="radio" id="plastic" name="material" value="plastic" />
-                    <label for="plastic">Plastic</label>
-                  </div>
+        <div>
+          <input type="radio" id="asia" name="continent" value="asia" checked />
+          <label for="asia">Asia</label>
+        </div>
 
-                <div>
-                    <input type="radio" id="vinyl" name="material" value="vinyl" />
-                    <label for="vinyl">Vinyl</label>
+        <div>
+          <input type="radio" id="europe" name="continent" value="europe" />
+          <label for="europe">Europe</label>
+        </div>
 
-                <div>
-                    <input type="radio" id="wood" name="material" value="wood" />
-                    <label for="wood">Wood</label>
+        <div>
+          <input
+            type="radio"
+            id="north-america"
+            name="continent"
+            value="north-america"
+          />
+          <label for="north-america">North America</label>
+        </div>
 
-                  </div>
-              </fieldset>
+        <div>
+          <input type="radio" id="oceania" name="continent" value="oceania" />
+          <label for="oceania">Oceania</label>
+        </div>
+      </fieldset>
+
+      <!-- Material -->
+      <fieldset>
+        <legend>Material</legend>
+
+        <div>
+          <input
+            type="radio"
+            id="ceramic"
+            name="material"
+            value="ceramic"
+            checked
+          />
+          <label for="ceramic">Asia</label>
+        </div>
+
+        <div>
+          <input type="radio" id="metal" name="material" value="metal" />
+          <label for="metal">Metal</label>
+        </div>
+
+        <div>
+          <input type="radio" id="plastic" name="material" value="plastic" />
+          <label for="plastic">Plastic</label>
+        </div>
+
+        <div>
+          <input type="radio" id="vinyl" name="material" value="vinyl" />
+          <label for="vinyl">Vinyl</label>
+        </div>
+
+        <div>
+          <input type="radio" id="wood" name="material" value="wood" />
+          <label for="wood">Wood</label>
+        </div>
+      </fieldset>
+    </section>
+
+    <!-- magnets -->
+    <section class="grid">
+      <div>
+        <img
+          src="https://www.wtamu.edu/~cbaird/sq/images/magnet_on_white.png"
+        />
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+
+<!-- right-sidebar -->
+ <section id="right-sidebar">
+  <h2>About</h2>
+  <p>An archive of magnets I have collected from around the world.</p>
+  <p>***</p>
+  <p><strong>Roll over each magnet to view each magnet to view its backstory.</strong></p>
+  <p>***</p>
+  <p>Last counted:<br>MM/DD/YYYY</p>
+  </section>
+</div>
 
 
-              
-        </section>
-
-        <!-- magnets -->
-        <section class="grid">
-            <div><img src="https://www.wtamu.edu/~cbaird/sq/images/magnet_on_white.png"/></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </section>
-        <script src="script.js" async defer></script>
-    </body>
+    <script src="script.js" async defer></script>
+  </body>
 </html>
