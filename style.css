@@ -5,6 +5,8 @@ html {
   
 /* main heading */
   .heading {
+    box-sizing: border-box;
+    padding-right: 30px;
     position: fixed;
     width: 100vw;
     display: flex;
@@ -93,7 +95,7 @@ legend {
     padding: 20px;
   }
   
-  .grid > *:nth-child(odd) {
+  .grid > *:nth-child(even) {
     transform: translateY(50%);
   }
   
@@ -105,11 +107,23 @@ legend {
   .grid > * {
     border-radius: 50%;
     border: 1px black solid;
+    background-color: white;
     height: 400px;
     width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .description {
+    position: absolute;
+    padding: 80px;
+    line-height: 25px;
+  }
+
+  small {
+    font-weight: 200;
+    font-size: 12px;
   }
 
   /* right-sidebar */
@@ -127,4 +141,12 @@ h2 {
 
   p {
     margin-bottom: 55px;
+  }
+
+  /* INTERACTIONS */
+
+  img:hover {
+    background: white;
+    opacity: 15%;
+    transition: 200ms all linear;
   }
