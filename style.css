@@ -25,7 +25,7 @@ html {
 /* rest of content */
   .content {
     position: relative;
-    top: 155px;
+    top: 150px;
     display: flex;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
 }
@@ -38,20 +38,21 @@ width: 20vw;
 }
 
 fieldset {
-    margin: 50px;
+  border: 0px;
+    margin-left: 10px;
+    margin-bottom: 50px;
 }
 
-  /* div:first-of-type {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 5px;
-  } */
-  
+legend {
+  font-size: 44px;
+}
+
   label {
     margin-right: 15px;
     line-height: 32px;
   }
   
+  /* radio button design */
   input {
     appearance: none;
   
@@ -59,20 +60,20 @@ fieldset {
     width: 16px;
     height: 16px;
   
-    border: 2px solid #999;
+    border: 1px solid black;
     transition: 0.2s all linear;
-    margin-right: 5px;
+    margin-right: 3px;
   
     position: relative;
     top: 4px;
   }
   
+  /* radio button checked appearance */
   input:checked {
     border: 6px solid black;
   }
   
-  button,
-  legend {
+  button {
     color: white;
     background-color: black;
     padding: 5px 10px;
@@ -100,6 +101,7 @@ fieldset {
     width: 100%;
     clip-path: circle(50%)
   }
+
   .grid > * {
     border-radius: 50%;
     border: 1px black solid;
@@ -124,5 +126,5 @@ h2 {
 }
 
   p {
-    margin-bottom: 66px;
+    margin-bottom: 55px;
   }
