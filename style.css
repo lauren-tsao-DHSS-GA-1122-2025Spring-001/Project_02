@@ -85,7 +85,7 @@ legend {
   }
 
 /* magnets */
-.grid {
+.gallery {
     position: relative;
     left: 25vw;
     max-width: 500px;
@@ -95,7 +95,7 @@ legend {
     padding: 20px;
   }
   
-  .grid > *:nth-child(even) {
+  .gallery > *:nth-child(even) {
     transform: translateY(50%);
   }
   
@@ -104,7 +104,7 @@ legend {
     clip-path: circle(50%)
   }
 
-  .grid > * {
+  .gallery > * {
     border-radius: 50%;
     border: 1px black solid;
     background-color: white;
