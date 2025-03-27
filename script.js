@@ -1,17 +1,43 @@
+// FILTERS
+// continent
 let asiaBox = document.getElementById("asia");
 
 let europeBox = document.getElementById("europe");
 
 let n_americaBox = document.getElementById("n-america");
 
-let metalBox = document.getElementById("metal");
-
+// material
 let ceramicBox = document.getElementById("ceramic");
 
+let metalBox = document.getElementById("metal");
+
+let plasticBox = document.getElementById("plastic");
+
+let vinylBox = document.getElementById("vinyl");
+
+let woodBox = document.getElementById("wood");
+
+// MAGNETS
 let mQatar = document.getElementById("mQatar");
 
 let mMontreal = document.getElementById("mMontreal");
 
+let mHouse = document.getElementById("mHouse");
+
+let mDC = document.getElementById("mDC");
+
+let mNYC = document.getElementById("mNYC");
+
+let mIceland = document.getElementById("mIceland");
+
+let mOhio = document.getElementById("mOhio");
+
+let mVancouver = document.getElementById("mVancouver");
+
+let mGibraltar = document.getElementById("mGibraltar");
+
+
+// FILTER FUNCTION
 function filter() {
 
 // Qatar magnet visibility  
@@ -27,4 +53,28 @@ function filter() {
   } else {
     mMontreal.style.display = "none";
   }
+
+  // House magnet visibility
+  if (n_americaBox.checked == true || woodBox.checked == true) {
+    mHouse.style.display = "block";
+  } else {
+    mHouse.style.display = "none";
+  }
+
+    // DC magnet visibility
+    if (n_americaBox.checked == true || woodBox.checked == true) {
+        mDC.style.display = "block";
+      } else {
+        mDC.style.display = "none";
+      }
+
+       // NYC magnet visibility
+    if (n_americaBox.checked == true || vinylBox.checked == true) {
+        mNYC.style.display = "block";
+      } else {
+        mNYC.style.display = "none";
+      }
+
+      
+
 }
