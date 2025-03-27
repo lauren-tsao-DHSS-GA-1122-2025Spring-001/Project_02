@@ -1,41 +1,50 @@
-function filterSelection() {
-    var magnets, i;
-    var filters = [];
+$(document).ready(function() {
+    var $filterCheckboxes = $('input[type="checkbox"]');
   
-    // Collect all checked checkboxes
-    const checkboxes = document.querySelectorAll('.btn:checked');
-    
-    // Add the value of checked checkboxes to the filters array
-    checkboxes.forEach(checkbox => {
-      filters.push(checkbox.id);
-    });
+    var filterFunc = function() {
+      var selectedFilters = {};
   
-    // Get all elements with the class "filterDiv"
-    magnets = document.getElementsByClassName("filterDiv");
+      $filterCheckboxes.filter(':checked').each(function() {
+        if (!selectedFilters.hasOwnProperty(this.name)) {
+          selectedFilters[this.name] = [];
+        }
+        selectedFilters[this.name].push(this.value);
+      });
   
-    // If no checkboxes are checked, show all items
-    if (filters.length === 0 || filters.includes("all")) {
-      filters = []; // Reset filters if "Show all" is checked or none are selected
+      var $filteredResults = $('.magnet');
+  
+      $.each(selectedFilters, function(name, filterValues) {
+        $filteredResults = $filteredResults.filter(function() {
+          var matched = false,
+              currentFilterValues = $(this).data('category').split(' ');
+  
+          $.each(currentFilterValues, function(_, currentFilterValue) {
+            if ($.inArray(currentFilterValue, filterValues) !== -1) {
+              matched = true;
+              return false;
+            }
+          });
+  
+          return matched;
+        });
+      });
+  
+      // Show only the filtered results
+      $filteredResults.show(); 
+      // Hide non-matching results
+      $('.magnet').not($filteredResults).hide(); 
+    };
+  
+    // Attach the filter function to checkbox change event
+    $filterCheckboxes.on('change', filterFunc);
+  
+    // Clear all checkboxes and reset filter
+    function clearFilters() {
+      $filterCheckboxes.prop('checked', false); // Uncheck all checkboxes
+      filterFunc(); // Reapply the filter (this will show all magnets)
     }
   
-    // Loop through all filterDiv elements and show/hide them based on the filters
-    for (i = 0; i < magnets.length; i++) {
-      const magnet = magnets[i];
-      const magnetClasses = magnet.className.split(' ');
-  
-      // Check if the magnet has any of the selected filters
-      const matchesFilter = filters.length === 0 || filters.some(filter => magnetClasses.includes(filter));
-  
-      if (matchesFilter) {
-        magnet.classList.remove("hide");
-      } else {
-        magnet.classList.add("hide");
-      }
-    }
-  }
-  
-  // Add event listener to each checkbox to trigger the filtering when the state changes
-  document.querySelectorAll('.btn').forEach((checkbox) => {
-    checkbox.addEventListener('change', filterSelection);
+    // Attach the clearFilters function to the "Clear all" button
+    $(".clear-btn").on("click", clearFilters);
   });
   

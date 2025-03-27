@@ -61,6 +61,10 @@ h2 {
   margin-bottom: 10px;
 }
 
+h3 {
+  font-size: 30px;
+}
+
   label {
     margin-right: 15px;
     line-height: 32px;
@@ -109,7 +113,7 @@ h2 {
 /* magnets */
 .gallery {
     position: relative;
-    left: 25vw;
+    left: 23vw;
     max-width: 500px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -126,7 +130,7 @@ h2 {
     clip-path: circle(50%)
   }
 
-  .gallery > * {
+  .magnet {
     border-radius: 50%;
     border: 1px black solid;
     background-color: white;
@@ -135,10 +139,12 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .description {
     position: absolute;
+    box-sizing: border-box;
     padding: 80px;
     line-height: 25px;
   }
@@ -152,7 +158,7 @@ h2 {
   
   #right-sidebar {
     position: fixed;
-    right: 0px;
+    left: 88vw;
     align-items: right;
     width: 10vw;
   }
