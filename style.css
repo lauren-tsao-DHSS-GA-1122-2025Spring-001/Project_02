@@ -39,26 +39,11 @@ align-items: left;
 width: 20vw;
 }
 
-.filterDiv {
-  display: block; /* Default state */
-}
-
-.filterDiv.hide {
-  display: none;
-}
-
-
 
 form {
   border: 0px;
     margin-left: 20px;
     margin-bottom: 50px;
-}
-
-h2 {
-  font-size: 44px;
-  font-weight: 500;
-  margin-bottom: 10px;
 }
 
 h3 {
@@ -130,7 +115,7 @@ h3 {
     clip-path: circle(50%)
   }
 
-  .magnet {
+  .gallery > * {
     border-radius: 50%;
     border: 1px black solid;
     background-color: white;
@@ -162,10 +147,6 @@ h3 {
     align-items: right;
     width: 10vw;
   }
-
-h2 {
-  font-weight: 44px;
-}
 
   p {
     margin-bottom: 50px;
