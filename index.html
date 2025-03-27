@@ -17,59 +17,45 @@
     </div>
 
     <div class="content">
-      <section id="left-sidebar">
+      <div id="left-sidebar">
         <!-- Continents -->
-        <fieldset>
-          <legend>Continent</legend>
+        <form>
+          <h2>Continent</h2>
 
-          <input type="radio" id="asia" name="continent" value="asia" checked />
-          <label for="asia">Asia</label>
+          <label><input type="checkbox" name="continent" value="asia" id="asia" /> Asia</label>
 
-          <input type="radio" id="europe" name="continent" value="europe" />
-          <label for="europe">Europe</label>
+          <label><input type="checkbox" name="continent" value="europe" id="europe" /> Europe</label>
 
-          <input
-            type="radio"
-            id="north-america"
-            name="continent"
-            value="north-america"
-          />
-          <label for="north-america">North America</label>
+          <br><label><input type="checkbox" name="continent" value="north-america" id="north-america" /> North America</label>
 
-          <input type="radio" id="oceania" name="continent" value="oceania" />
-          <label for="oceania">Oceania</label>
-        </fieldset>
+          <label><input type="checkbox" name="continent" value="oceania" id="oceania" /> Oceania</label>
+        </form>
 
         <!-- Material -->
-        <fieldset>
-          <legend>Material</legend>
+        <form>
+          <h2>Material</h2>
 
-          <input
-            type="radio"
-            id="ceramic"
-            name="material"
-            value="ceramic"
-            checked
-          />
-          <label for="ceramic">Asia</label>
+          <label><input type="checkbox" name="material" value="ceramic" id="ceramic" /> Ceramic</label>
 
-          <input type="radio" id="metal" name="material" value="metal" />
-          <label for="metal">Metal</label>
+          <label><input type="checkbox" name="material" value="metal" id="metal" /> Metal</label>
 
-          <input type="radio" id="plastic" name="material" value="plastic" />
-          <label for="plastic">Plastic</label>
+          <br><label><input type="checkbox" name="material" value="plastic" id="plastic" /> Plastic</label>
 
-          <input type="radio" id="vinyl" name="material" value="vinyl" />
-          <label for="vinyl">Vinyl</label>
 
-          <input type="radio" id="wood" name="material" value="wood" />
-          <label for="wood">Wood</label>
-        </fieldset>
-      </section>
+          <label><input type="checkbox" name="material" value="vinyl" id="vinyl" /> Vinyl</label>
+
+
+          <label><input type="checkbox" name="material" value="wood" id="wood" /> Wood</label>
+
+        </form>
+
+        <button class="clear-btn" onclick="filterSelection('clear')"> Clear all</button>
+      </div>
+
 
       <!-- magnets -->
       <section class="gallery">
-        <div>
+        <div class="magnet" data-id="qatar" data-category="asia metal">
           <div class="description">
             <h2>
               Qatar<br /><small><em>07 / 27 / 2023</em></small>
@@ -81,7 +67,7 @@
           <img src="/magnets/01_qatar.png" />
         </div>
 
-        <div>
+        <div class="magnet" data-id="montreal" data-category="north-america ceramic">
           <div class="description">
             <h2>
               Montreal<br /><small><em>03 / 15 / 2023</em></small>
@@ -93,7 +79,7 @@
           <img src="/magnets/02_montreal.png" />
         </div>
 
-        <div>
+        <div class="magnet" data-id="half-house" data-category="north america wood">
           <div class="description">
             <h2>
               Half-house<br /><small><em>07 / 15 / 2024</em></small>
@@ -105,7 +91,7 @@
           <img src="/magnets/03_house.png" />
         </div>
 
-        <div>
+        <div class="magnet" data-id="washington-dc" data-category="north-america wood">
           <div class="description">
             <h2>
               Washington DC<br /><small><em>02 / 19 / 2023</em></small>
@@ -117,7 +103,7 @@
           <img src="/magnets/04_dc.png" />
         </div>
 
-        <div>
+        <div class="magnet" data-id="nyc" data-category="north-america vinyl">
           <div class="description">
             <h2>
               New York City<br /><small><em>03 / 15 / 2023</em></small>
@@ -128,7 +114,7 @@
           <img src="/magnets/05_nyc.png" />
         </div>
 
-        <div>
+        <div class="filterDiv north-america plastic">
           <div class="description">
             <h2>
               Louisiana<br /><small><em>03 / 07 / 2023</em></small>
@@ -139,7 +125,7 @@
           <img src="/magnets/06_louisiana.png" />
         </div>
 
-        <div>
+        <div class="filterDiv europe wood">
           <div class="description">
             <h2>
               Iceland<br /><small><em>07 / 31 / 2024</em></small>
@@ -150,7 +136,7 @@
           <img src="/magnets/07_iceland.png" />
         </div>
 
-        <div>
+        <div class="filterDiv north-america metal">
           <div class="description">
             <h2>
               Ohio<br /><small><em>08 / 08 / 2024</em></small>
@@ -161,7 +147,7 @@
           <img src="/magnets/08_ohio.png" />
         </div>
 
-        <div>
+        <div class="filterDiv north-america wood">
           <div class="description">
             <h2>
               Vancouver<br /><small><em>04 / 14 / 2023</em></small>
@@ -173,7 +159,7 @@
           <img src="/magnets/09_vancouver.png" />
         </div>
 
-        <div>
+        <div class="filterDiv europe metal">
           <div class="description">
             <h2>
               Gibraltar<br /><small><em>10 / 06 / 2023</em></small>
