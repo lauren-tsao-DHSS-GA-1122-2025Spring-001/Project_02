@@ -28,6 +28,8 @@ let mDC = document.getElementById("mDC");
 
 let mNYC = document.getElementById("mNYC");
 
+let mLouisiana = document.getElementById("mLouisiana");
+
 let mIceland = document.getElementById("mIceland");
 
 let mOhio = document.getElementById("mOhio");
@@ -36,11 +38,9 @@ let mVancouver = document.getElementById("mVancouver");
 
 let mGibraltar = document.getElementById("mGibraltar");
 
-
 // FILTER FUNCTION
 function filter() {
-
-// Qatar magnet visibility  
+  // Qatar magnet visibility
   if (asiaBox.checked == true || metalBox.checked == true) {
     mQatar.style.display = "block";
   } else {
@@ -61,20 +61,52 @@ function filter() {
     mHouse.style.display = "none";
   }
 
-    // DC magnet visibility
-    if (n_americaBox.checked == true || woodBox.checked == true) {
-        mDC.style.display = "block";
+  // DC magnet visibility
+  if (n_americaBox.checked == true || woodBox.checked == true) {
+    mDC.style.display = "block";
+  } else {
+    mDC.style.display = "none";
+  }
+
+  // NYC magnet visibility
+  if (n_americaBox.checked == true || vinylBox.checked == true) {
+    mNYC.style.display = "block";
+  } else {
+    mNYC.style.display = "none";
+  }
+
+    // Louisiana magnet visibility
+    if (n_americaBox.checked == true || plasticBox.checked == true) {
+        mLouisiana.style.display = "block";
       } else {
-        mDC.style.display = "none";
+        mLouisiana.style.display = "none";
       }
 
-       // NYC magnet visibility
-    if (n_americaBox.checked == true || vinylBox.checked == true) {
-        mNYC.style.display = "block";
-      } else {
-        mNYC.style.display = "none";
-      }
+  // Iceland magnet visibility
+  if (europeBox.checked == true || woodBox.checked == true) {
+    mIceland.style.display = "block";
+  } else {
+    mIceland.style.display = "none";
+  }
 
-      
+  // Ohio magnet visibility
+  if (n_americaBox.checked == true || plasticBox.checked == true) {
+    mOhio.style.display = "block";
+  } else {
+    mOhio.style.display = "none";
+  }
 
+  // Vancouver magnet visibility
+  if (n_americaBox.checked == true || woodBox.checked == true) {
+    mVancouver.style.display = "block";
+  } else {
+    mVancouver.style.display = "none";
+  }
+
+  // Gibraltar magnet visibility
+  if (europe.checked == true || metalBox.checked == true) {
+    mGibraltar.style.display = "block";
+  } else {
+    mGibraltar.style.display = "none";
+  }
 }
