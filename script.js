@@ -126,4 +126,8 @@ function filter() {
       mVancouver.style.display = "block";
       mGibraltar.style.display = "block";
     }
+
+    // if (asiaBox.checked == true || europeBox.checked == true || n_americaBox.checked == true || ceramicBox.checked == true || metalBox.checked == true || plasticBox.checked == true || vinylBox == true || woodBox.checked == true) {
+    //   allBox.checked = false;
+    // }
 }
