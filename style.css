@@ -106,9 +106,9 @@ h3 {
     padding: 20px;
   }
   
-  .gallery > *:nth-child(even) {
+  /* .gallery > *:nth-child(even) {
     transform: translateY(50%);
-  }
+  } */
   
   img {
     width: 100%;
@@ -130,7 +130,7 @@ h3 {
   .description {
     position: absolute;
     box-sizing: border-box;
-    padding: 80px;
+    padding: 60px;
     line-height: 25px;
   }
 
