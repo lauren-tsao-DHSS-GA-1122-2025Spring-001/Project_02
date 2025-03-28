@@ -17,6 +17,9 @@ let vinylBox = document.getElementById("vinyl");
 
 let woodBox = document.getElementById("wood");
 
+// show all
+let allBox = document.getElementById("all");
+
 // MAGNETS
 let mQatar = document.getElementById("mQatar");
 
@@ -109,4 +112,18 @@ function filter() {
   } else {
     mGibraltar.style.display = "none";
   }
+
+    // Show all visibility
+    if (all.checked == true) {
+      mQatar.style.display = "block"
+      mMontreal.style.display = "block";
+      mHouse.style.display = "block";
+      mDC.style.display = "block";
+      mNYC.style.display = "block";
+      mLouisiana.style.display = "block";
+      mIceland.style.display = "block";
+      mOhio.style.display = "block";
+      mVancouver.style.display = "block";
+      mGibraltar.style.display = "block";
+    }
 }
