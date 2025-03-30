@@ -105,17 +105,8 @@ h3 {
     gap: 40px; 
     padding: 20px;
   }
-  
-  /* .gallery > *:nth-child(even) {
-    transform: translateY(50%);
-  } */
-  
-  img {
-    width: 100%;
-    clip-path: circle(50%)
-  }
 
-  .gallery > * {
+  .magnet {
     border-radius: 50%;
     border: 1px black solid;
     background-color: white;
@@ -137,6 +128,11 @@ h3 {
   small {
     font-weight: 200;
     font-size: 12px;
+  }
+
+  img {
+    width: 100%;
+    clip-path: circle(50%)
   }
 
   /* right-sidebar */

@@ -1,20 +1,14 @@
 // FILTERS
 // continent
 let asiaBox = document.getElementById("asia");
-
 let europeBox = document.getElementById("europe");
-
 let n_americaBox = document.getElementById("n-america");
 
 // material
 let ceramicBox = document.getElementById("ceramic");
-
 let metalBox = document.getElementById("metal");
-
 let plasticBox = document.getElementById("plastic");
-
 let vinylBox = document.getElementById("vinyl");
-
 let woodBox = document.getElementById("wood");
 
 // show all
@@ -22,23 +16,14 @@ let allBox = document.getElementById("all");
 
 // MAGNETS
 let mQatar = document.getElementById("mQatar");
-
 let mMontreal = document.getElementById("mMontreal");
-
 let mHouse = document.getElementById("mHouse");
-
 let mDC = document.getElementById("mDC");
-
 let mNYC = document.getElementById("mNYC");
-
 let mLouisiana = document.getElementById("mLouisiana");
-
 let mIceland = document.getElementById("mIceland");
-
 let mOhio = document.getElementById("mOhio");
-
 let mVancouver = document.getElementById("mVancouver");
-
 let mGibraltar = document.getElementById("mGibraltar");
 
 // FILTER FUNCTION
@@ -48,6 +33,7 @@ function filter() {
     mQatar.style.display = "block";
   } else {
     mQatar.style.display = "none";
+    
   }
 
   // Montreal magnet visibility
@@ -107,14 +93,14 @@ function filter() {
   }
 
   // Gibraltar magnet visibility
-  if (europe.checked == true || metalBox.checked == true) {
+  if (europeBox.checked == true || metalBox.checked == true) {
     mGibraltar.style.display = "block";
   } else {
     mGibraltar.style.display = "none";
   }
 
     // Show all visibility
-    if (all.checked == true) {
+    if (allBox.checked == true) {
       mQatar.style.display = "block"
       mMontreal.style.display = "block";
       mHouse.style.display = "block";
@@ -127,7 +113,24 @@ function filter() {
       mGibraltar.style.display = "block";
     }
 
-    // if (asiaBox.checked == true || europeBox.checked == true || n_americaBox.checked == true || ceramicBox.checked == true || metalBox.checked == true || plasticBox.checked == true || vinylBox == true || woodBox.checked == true) {
-    //   allBox.checked = false;
-    // }
+    let magnets = document.querySelectorAll(".magnet");
+    let visibleMagnets = [];
+
+    for (let i = 0; i < magnets.length; i++){
+      if (magnets[i].style.display === "block") {
+        visibleMagnets.push(magnets[i]);
+      }
+    }
+    
+    console.log(visibleMagnets.length);
+
+    for (let i = 0; i < visibleMagnets.length; i++) {
+      if (i % 2 === 1) {
+        visibleMagnets[i].style.transform = "translateY(50%)";
+      } else {
+        visibleMagnets[i].style.transform = "none";
+      }
+    }
 }
+
+filter();
