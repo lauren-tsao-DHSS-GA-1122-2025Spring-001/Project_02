@@ -34,6 +34,7 @@ hr {
   position: fixed;
   align-items: left;
   width: 20vw;
+  margin-left: 20px;
   }
 
 .wrapper {
@@ -65,6 +66,11 @@ hr {
   line-height: 25px;
 }
 
+small {
+  font-weight: 200;
+  font-size: 12px;
+}
+
 img {
   width: 100%;
   clip-path: circle(50%)
@@ -77,15 +83,17 @@ img {
 }
 
 
-.wrapper > * {
-  aspect-ratio: 1/1;
-  border: 1px black solid;
-  padding: 1em;
+/* right-sidebar */
+  
+#right-sidebar {
+  position: fixed;
+  left: 88vw;
+  align-items: right;
+  width: 10vw;
 }
 
-
-h2 {
-  margin: 0;
+p {
+  margin-bottom: 50px;
 }
 
 

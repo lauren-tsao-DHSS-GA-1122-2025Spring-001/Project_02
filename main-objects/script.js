@@ -4,75 +4,84 @@
 
 const books = [
   {
-    title: "I Who Have Never Known Men",
+    title: "Qatar",
     author: "Jacqueline Harpman",
-    yearCreated: 1995,
+    yearCreated: "07 / 27 / 2023",
     genre: "Fiction",
     image: "../magnets/01_qatar.png",
     description: "Result of a flight delay, received a free room Went on a desert tour while waiting for the flight. Rode camels and ATVs through the desert, drove through the dunes."
   },
   {
-    title: "Lincoln in the Bardo",
+    title: "Montreal",
     author: "George Saunders",
-    yearCreated: 2017,
+    yearCreated: "03 / 15 / 2023",
     genre: "Fiction",
-    image: "../magnets/02_montreal.png"
+    image: "../magnets/02_montreal.png",
+    description: "Impromptu trip for husband’s Spring break (Cancún was too expensive). Lovely people and food, quaint place. Went to the Biodome constructed from the Olympic grounds."
   },
   {
-    title: "Identity and Violence",
+    title: "Half-House",
     author: "Amartya Sen",
-    yearCreated: 2006,
+    yearCreated: "07 / 15 / 2024",
     genre: "Nonfiction",
-    image: "../magnets/03_house.png"
+    image: "../magnets/03_house.png",
+    description: "Marks the first time in 14 years that we are living in the same city together. She has the other half of the house symbolizing that our family has been completed."
   },
   {
-    title: "Martyr!",
+    title: "Washington DC",
     author: "Kaveh Akbar",
-    yearCreated: 2024,
+    yearCreated: "02 / 19 / 2023",
     genre: "Fiction",
-    image: "../magnets/04_dc.png"
+    image: "../magnets/04_dc.png",
+    description: "First time living abroad Followed husband for his masters’ program there. A life-changing experience, grew a lot as a person while adapting to a new culture."
   },
   {
-    title: "The Moustache",
+    title: "New York City",
     author: "Emmanuel Carrère",
-    yearCreated: 1986,
+    yearCreated: "03 / 15 / 2023",
     genre: "Fiction",
-    image: "../magnets/05_nyc.png"
+    image: "../magnets/05_nyc.png",
+    description: "Too many memories! Have family there, first time studying abroad. Bar and arts scene is amazing."
   },
   {
-    title: "The Memory Police",
+    title: "Louisiana",
     author: "Yoko Ogawa",
-    yearCreated: 1994,
+    yearCreated: "03 / 07 / 2023",
     genre: "Fiction",
-    image: "../magnets/06_louisiana.png"
+    image: "../magnets/06_louisiana.png",
+    description: "First road trip! Lots of memories made, seen so many sights. Louisiana is my favorite place in the US because of the food and sights."
   },
   {
-    title: "Evicted",
+    title: "Iceland",
     author: "Matthew Desmond",
-    yearCreated: 2016,
+    yearCreated: "07 / 31 / 2024",
     genre: "Nonfiction",
-    image: "../magnets/07_iceland.png"
+    image: "../magnets/07_iceland.png",
+    description: "A last hurrah trip before starting my masters in NYU. A beautiful ethereal place that seems otherworldly."
   },
   {
-    title: "Say Nothing",
+    title: "Ohio",
     author: "Patrick Radden Keefe",
-    yearCreated: 2019,
+    yearCreated: "08 / 08 / 2024",
     genre: "Nonfiction",
-    image: "../magnets/08_ohio.png"
+    image: "../magnets/08_ohio.png",
+    description: "Where my husband did his undergrad. Went there for his college friend’s wedding. Revisited old places and memories."
   },
   {
-    title: "Ugly Feelings",
+    title: "Vancouver",
     author: "Sianne Ngai",
-    yearCreated: 2005,
+    yearCreated: "04 / 14 / 2023",
     genre: "Nonfiction",
-    image: "../magnets/09_vancouver.png"
+    image: "../magnets/09_vancouver.png",
+    description: "Visiting my childhood friend that I have not seen in over a decade. Went whale-watching for the first time Drove up to Squamish Mountain, rode the Sea-to-Sky Gondola, and went hiking around the area."
   },
   {
-    title: "The Story and the Situation",
+    title: "Gibraltar",
     author: "Vivian Gornick",
-    yearCreated: 1992,
+    yearCreated: "10 / 06 / 2023",
     genre: "Nonfiction",
-    image: "../magnets/10_gibraltar.png"
+    image: "../magnets/10_gibraltar.png",
+    description: "A really unique place that I never thought to visit Went there with husband for a Warhammer competition Learned about the history of Gibraltar Met people from different countries from different backgrounds."
   }
 ];
 
@@ -87,10 +96,9 @@ let renderBooks = (data) => {
   data.forEach((book) => {
     let newDiv = document.createElement("div");
     newDiv.setAttribute("data-genre", book.genre);
-    // newDiv.innerHTML = `<h3>${book.title}</h3><p>${book.author}</p><img src="${book.image}" alt="${book.title}" />`;
     newDiv.innerHTML = `<div class="description">
             <h3>
-              ${book.title}<br /><small><em>07 / 27 / 2023</em></small>
+              ${book.title}<br /><small><em>${book.yearCreated}</em></small>
             </h3>
             ${book.description}
           </div><img src="${book.image}" alt="${book.title}" />`;
