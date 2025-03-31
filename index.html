@@ -1,171 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-
+    <title>Directory</title>
+    <link href="style.css" rel="stylesheet" />
+    <style>
+      html {
+        font-family: Helvetica, sans-serif;
+        line-height: 22px;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="heading">
-      <h1>10</h1>
-      <hr width="100%;" color="black" size="7" />
-      <h1>magnets</h1>
+    <div class="whole-page">
+      <h1>Project #2 - Visual Collection</h1>
+      <h3>Lauren Tsao | DHSS-GA 1122 001 - Web Development</h3>
+      <ol>
+        <li><a href="main/">Link to Website</a></li>
+        <li><a href="main-objects/">Objects Version</a>
+        </li>
+      </ol>
     </div>
-
-    <div class="content">
-      <div id="left-sidebar">
-        <!-- Continents -->
-        <form>
-          <h2>Continent</h2>
-
-          <label><input type="checkbox" id="asia" onclick="filter()"> Asia</label>
-
-          <label><input type="checkbox" id="europe" onclick="filter()"> Europe</label>
-
-          <br><label><input type="checkbox" id="n-america" onclick="filter()"> North&nbspAmerica</label>
-
-        </form>
-
-        <!-- Material -->
-        <form>
-          <h2>Material</h2>
-
-          <label><input type="checkbox" id="ceramic" onclick="filter()"> Ceramic</label>
-
-          <label><input type="checkbox" id="metal" onclick="filter()"> Metal</label>
-
-          <label><input type="checkbox" id="plastic" onclick="filter()"> Plastic</label>
-
-          <label><input type="checkbox" id="vinyl" onclick="filter()"> Vinyl</label>
-
-          <label><input type="checkbox" id="wood" onclick="filter()">Wood</label>
-
-        </form>
-
-        <form>
-        <label><input type="checkbox" id="all" onclick="filter()" checked/> <strong>Show all</strong></label>
-      </form>
-      </div>
-
-
-      <!-- magnets -->
-      <section class="gallery">
-        <div class="magnet" id="mQatar">
-          <div class="description">
-            <h3>
-              Qatar<br /><small><em>07 / 27 / 2023</em></small>
-            </h3>
-            Result of a flight delay, received a free room Went on a desert tour while waiting for the flight. Rode camels and ATVs through the desert, drove through the dunes.
-          </div>
-          <img src="/magnets/01_qatar.png" />
-        </div>
-
-        <div class="magnet" id="mMontreal">
-          <div class="description">
-            <h3>
-              Montreal<br /><small><em>03 / 15 / 2023</em></small>
-            </h3>
-            Impromptu trip for husband’s Spring break (Cancún was too expensive). Lovely people and food, quaint place. Went to the Biodome constructed from the Olympic grounds.
-          </div>
-          <img src="/magnets/02_montreal.png" />
-        </div>
-
-        <div class="magnet" id="mHouse">          
-          <div class="description">
-            <h3>
-              Half-house<br /><small><em>07 / 15 / 2024</em></small>
-            </h3>
-            Marks the first time in 14 years that we are living in the same city together. She has the other half of the house symbolizing that our family has been completed.
-          </div>
-          <img src="/magnets/03_house.png" />
-        </div>
-
-        <div class="magnet" id="mDC">          <div class="description">
-            <h3>
-              Washington DC<br /><small><em>02 / 19 / 2023</em></small>
-            </h3>
-            First time living abroad Followed husband for his masters’ program there. A life-changing experience, grew a lot as a person while adapting to a new culture.
-          </div>
-          <img src="/magnets/04_dc.png" />
-        </div>
-
-        <div class="magnet" id="mNYC">          <div class="description">
-            <h3>
-              New York City<br /><small><em>03 / 15 / 2023</em></small>
-            </h3>
-            Too many memories! Have family there, first time studying abroad. Bar and arts scene is amazing.
-          </div>
-          <img src="/magnets/05_nyc.png" />
-        </div>
-
-        <div class="magnet" id="mLouisiana">          <div class="description">
-            <h3>
-              Louisiana<br /><small><em>03 / 07 / 2023</em></small>
-            </h3>
-            First road trip! Lots of memories made, seen so many sights. Louisiana is my favorite place in the US because of the food and sights.
-          </div>
-          <img src="/magnets/06_louisiana.png" />
-        </div>
-
-        <div class="magnet" id="mIceland">          <div class="description">
-            <h3>
-              Iceland<br /><small><em>07 / 31 / 2024</em></small>
-            </h3>
-            A last hurrah trip before starting my masters in NYU. A beautiful ethereal place that seems otherworldly.
-          </div>
-          <img src="/magnets/07_iceland.png" />
-        </div>
-
-        <div class="magnet" id="mOhio">          <div class="description">
-            <h3>
-              Ohio<br /><small><em>08 / 08 / 2024</em></small>
-            </h3>
-            Where my partner did his undergrad. Went there for his college friend’s wedding. Revisited old places and memories.
-          </div>
-          <img src="/magnets/08_ohio.png" />
-        </div>
-
-        <div class="magnet" id="mVancouver">          <div class="description">
-            <h3>
-              Vancouver<br /><small><em>04 / 14 / 2023</em></small>
-            </h3>
-            Visiting my childhood friend that I have not seen in over a decade. Went whale-watching for the first time Drove up to Squamish Mountain, rode the Sea-to-Sky Gondola, and went hiking around the area.
-          </div>
-          <img src="/magnets/09_vancouver.png" />
-        </div>
-
-        <div class="magnet" id="mGibraltar">          <div class="description">
-            <h3>
-              Gibraltar<br /><small><em>10 / 06 / 2023</em></small>
-            </h3>
-            A really unique place that I never thought to visit Went there with husband for a Warhammer competition Learned about the history of Gibraltar Met people from different countries from different backgrounds.
-          </div>
-          <img src="/magnets/10_gibraltar.png" />
-        </div>
-      </section>
-
-      <!-- right-sidebar -->
-      <section id="right-sidebar">
-        <h2>About</h2>
-        <p>An archive of magnets I have collected from around the world.</p>
-        <p>***</p>
-        <p>
-          <strong
-            >Roll over each magnet to view each magnet to view its
-            backstory.</strong
-          >
-        </p>
-        <p>***</p>
-        <p>Last counted:<br />30/03/2025</p>
-      </section>
-    </div>
-
-    <script src="script.js" async defer></script>
   </body>
 </html>

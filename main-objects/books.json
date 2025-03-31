@@ -1,0 +1,62 @@
+[
+  {
+    "place": "Qatar",
+    "continent": "Asia",
+    "material": "metal",
+    "image": "../magnets/01_qatar.jpg"
+  },
+  {
+   "place": "Montreal",
+    "continent": "North America",
+    "material": "ceramic",
+    "image": "../magnets/02_montreal.jpg"
+  },
+  {
+   "place": "House",
+    "continent": "North America",
+    "material": "wood",
+    "image": "../magnets/03_house.jpg"
+  },
+  {
+    "place": "DC",
+    "continent": "North America",
+    "material": "wood",
+    "image": "../magnets/04_dc.jpg"
+  },
+  {
+    "place": "NYC",
+    "continent": "North America",
+    "material": "vinyl",
+    "image": "../magnets/05_nyc.jpg"
+  },
+  {
+    "place": "Louisiana",
+    "continent": "North America",
+    "material": "plastic",
+    "image": "../magnets/06_louisiana.jpg"
+  },
+  {
+    "place": "Iceland",
+    "continent": "Europe",
+    "material": "wood",
+    "image": "../magnets/07_iceland.jpg"
+  },
+  {
+    "place": "Ohio",
+    "continent": "North America",
+    "material": "plastic",
+    "image": "../magnets/08_ohio.jpg"
+  },
+  {
+    "place": "Vancouver",
+    "continent": "North America",
+    "material": "wood",
+    "image": "../magnets/09_vancouver.jpg"
+  },
+  {
+    "place": "Gibraltar",
+    "continent": "Europe",
+    "material": "metal",
+    "image": "../magnets/10_gibraltar.jpg"
+  }
+]
