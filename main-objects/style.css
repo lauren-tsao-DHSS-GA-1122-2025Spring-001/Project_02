@@ -31,20 +31,15 @@ hr {
 }
 
 /* left sidebar */
-.left-sidebar {
+#left-sidebar {
   position: fixed;
   align-items: left;
   width: 20vw;
-  }
-
-  .filters {
-    border: 0px;
-      margin-left: 20px;
-      margin-bottom: 50px;
+  margin-left: 20px;
   }
   
 
-.wrapper {
+.gallery {
   position: relative;
   left: 23vw;
   max-width: 500px;
@@ -54,7 +49,7 @@ hr {
   padding: 20px;
 }
 
-.wrapper > * {
+.gallery > * {
   border-radius: 50%;
   border: 1px black solid;
   background-color: white;
@@ -96,16 +91,21 @@ p {
   margin-bottom: 50px;
 }
 
-.continent-checkboxes {
+.continent-checkboxes, .material-checkboxes {
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 /* checkbox */
 
-label {
+.continentCheckbox , .materialCheckbox {
   margin-right: 15px;
   line-height: 32px;
+  white-space: nowrap; /* Prevents wrapping */
 }
+
+
 
 /* radio button design */
 input {
@@ -121,12 +121,6 @@ input {
 
   position: relative;
   top: 4px;
-}
-
-.checkbox-container {
-  border: 0px;
-    margin-left: 20px;
-    margin-bottom: 50px;
 }
 
 /* radio button checked appearance */

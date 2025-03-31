@@ -5,7 +5,7 @@
 const magnets = [
   {
     title: "Qatar",
-    material: "metal",
+    material: "Metal",
     yearCreated: "07 / 27 / 2023",
     continent: "Asia",
     image: "../magnets/01_qatar.png",
@@ -13,7 +13,7 @@ const magnets = [
   },
   {
     title: "Montreal",
-    material: "ceramic",
+    material: "Ceramic",
     yearCreated: "03 / 15 / 2023",
     continent: "North America",
     image: "../magnets/02_montreal.png",
@@ -21,7 +21,7 @@ const magnets = [
   },
   {
     title: "Half-House",
-    material: "wood",
+    material: "Wood",
     yearCreated: "07 / 15 / 2024",
     continent: "North America",
     image: "../magnets/03_house.png",
@@ -29,7 +29,7 @@ const magnets = [
   },
   {
     title: "Washington DC",
-    material: "wood",
+    material: "Wood",
     yearCreated: "02 / 19 / 2023",
     continent: "North America",
     image: "../magnets/04_dc.png",
@@ -37,7 +37,7 @@ const magnets = [
   },
   {
     title: "New York City",
-    material: "vinyl",
+    material: "Vinyl",
     yearCreated: "03 / 15 / 2023",
     continent: "North America",
     image: "../magnets/05_nyc.png",
@@ -45,7 +45,7 @@ const magnets = [
   },
   {
     title: "Louisiana",
-    material: "plastic",
+    material: "Plastic",
     yearCreated: "03 / 07 / 2023",
     continent: "North America",
     image: "../magnets/06_louisiana.png",
@@ -53,7 +53,7 @@ const magnets = [
   },
   {
     title: "Iceland",
-    material: "wood",
+    material: "Wood",
     yearCreated: "07 / 31 / 2024",
     continent: "Europe",
     image: "../magnets/07_iceland.png",
@@ -61,7 +61,7 @@ const magnets = [
   },
   {
     title: "Ohio",
-    material: "plastic",
+    material: "Plastic",
     yearCreated: "08 / 08 / 2024",
     continent: "North America",
     image: "../magnets/08_ohio.png",
@@ -69,7 +69,7 @@ const magnets = [
   },
   {
     title: "Vancouver",
-    material: "wood",
+    material: "Wood",
     yearCreated: "04 / 14 / 2023",
     continent: "North America",
     image: "../magnets/09_vancouver.png",
@@ -77,7 +77,7 @@ const magnets = [
   },
   {
     title: "Gibraltar",
-    material: "metal",
+    material: "Metal",
     yearCreated: "10 / 06 / 2023",
     continent: "Europe",
     image: "../magnets/10_gibraltar.png",
@@ -85,7 +85,7 @@ const magnets = [
   }
 ];
 
-let wrapper = document.querySelector(".wrapper");
+let gallery = document.querySelector(".gallery");
 
 let renderMagnets = (data) => {
   data.forEach((magnet) => {
@@ -97,17 +97,17 @@ let renderMagnets = (data) => {
             </h3>
             ${magnet.description}
           </div><img src="${magnet.image}" alt="${magnet.title}" />`;
-    wrapper.append(newDiv);
+    gallery.append(newDiv);
   });
 };
 
 renderMagnets(magnets)
 
-// continent filter
+// continent checkbox filters
 
 const continents = ["Asia", "North America", "Europe"];
 
-let selectionWrapper = document.querySelector(".continent-checkboxes");
+let continentCheckboxes = document.querySelector(".continent-checkboxes");
 
 continents.forEach((continent) => {
     let checkbox = document.createElement("input");
@@ -117,12 +117,34 @@ continents.forEach((continent) => {
     let label = document.createElement("label");
     label.textContent = continent;
   
-    let continent_option = document.createElement("div");
-    continent_option.classList.add("continent_option");
-  continent_option.appendChild(checkbox);
-  continent_option.appendChild(label);
+    let continentCheckbox = document.createElement("div");
+    continentCheckbox.classList.add("continentCheckbox");
+  continentCheckbox.appendChild(checkbox);
+  continentCheckbox.appendChild(label);
   
-    selectionWrapper.appendChild(continent_option);
+    continentCheckboxes.appendChild(continentCheckbox);
+  });
+
+// material checkbox filters
+
+const materials = ["Ceramic", "Metal", "Plastic", "Vinyl", "Wood"];
+
+let materialCheckboxes = document.querySelector(".material-checkboxes");
+
+materials.forEach((material) => {
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = material;
+  
+    let label = document.createElement("label");
+    label.textContent = material;
+  
+    let materialCheckbox = document.createElement("div");
+    materialCheckbox.classList.add("materialCheckbox");
+  materialCheckbox.appendChild(checkbox);
+  materialCheckbox.appendChild(label);
+  
+    materialCheckboxes.appendChild(materialCheckbox);
   });
 
 let changeData = () => {
@@ -134,7 +156,7 @@ let changeData = () => {
     tickedcontinents.push(checkbox.id);
   });
 
-  let allMagnets = document.querySelectorAll(".wrapper div");
+  let allMagnets = document.querySelectorAll(".gallery div");
 
   allMagnets.forEach((magnet) => {
     let magnetContinent = magnet.getAttribute("data-continent");
