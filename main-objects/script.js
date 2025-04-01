@@ -87,10 +87,13 @@ const magnets = [
 
 let gallery = document.querySelector(".gallery");
 
+// give each magnet a div and insert into the gallery
 let renderMagnets = (data) => {
   data.forEach((magnet) => {
     let newDiv = document.createElement("div");
     newDiv.setAttribute("data-continent", magnet.continent);
+    newDiv.setAttribute("data-material", magnet.material);
+    newDiv.classList.add("magnet");
     newDiv.innerHTML = `<div class="description">
             <h3>
               ${magnet.title}<br /><small><em>${magnet.yearCreated}</em></small>
@@ -147,28 +150,58 @@ materials.forEach((material) => {
     materialCheckboxes.appendChild(materialCheckbox);
   });
 
-let changeData = () => {
+// checkbox interactions
 
-  let tickedcontinents = [];
+let updateData = () => {
+
+  let tickedContinents = [];
+  let tickedMaterials = [];
 
   let allCheckboxes = document.querySelectorAll("input[type=checkbox]:checked");
   allCheckboxes.forEach((checkbox) => {
-    tickedcontinents.push(checkbox.id);
+    // If the checkbox is a continent filter, add it to the continents array
+    if (checkbox.id === "Asia" || checkbox.id === "North America" || checkbox.id === "Europe") {
+      tickedContinents.push(checkbox.id);
+    }
+    // If the checkbox is a material filter, add it to the materials array
+    if (checkbox.id === "Ceramic" || checkbox.id === "Metal" || checkbox.id === "Plastic" || checkbox.id === "Vinyl" || checkbox.id === "Wood") {
+      tickedMaterials.push(checkbox.id);
+    }
   });
 
-  let allMagnets = document.querySelectorAll(".gallery div");
+  let allMagnets = document.querySelectorAll(".magnet");
 
   allMagnets.forEach((magnet) => {
     let magnetContinent = magnet.getAttribute("data-continent");
+    let magnetMaterial = magnet.getAttribute("data-material");
 
-    if (tickedcontinents.length === 0 || tickedcontinents.includes(magnetContinent)) {
+    if (tickedContinents.length == 0 && tickedMaterials.length == 0 || tickedContinents.includes(magnetContinent) || tickedMaterials.includes(magnetMaterial)) {
       magnet.style.display = "block"; 
-    } else {
+    } 
+    else {
       magnet.style.display = "none";
     }
   });
+
+  let visibleMagnets = [];
+  
+allMagnets.forEach((magnet) => {
+  if (magnet.style.display === "block") {
+    visibleMagnets.push(magnet);
+  }
+});
+
+console.log(visibleMagnets.length);
+
+for (let i = 0; i < visibleMagnets.length; i++) {
+  if (i % 2 === 1) {
+    visibleMagnets[i].style.transform = "translateY(50%)";
+  } else {
+    visibleMagnets[i].style.transform = "none";
+  }
+}
+
 };
 
-// Attach the changeData function to all checkbox inputs
 let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-allCheckboxes.forEach((checkbox) => checkbox.addEventListener("change", changeData));
+allCheckboxes.forEach((checkbox) => checkbox.addEventListener("change", updateData));
