@@ -106,7 +106,7 @@ let renderMagnets = (data) => {
 
 renderMagnets(magnets)
 
-// continent checkbox filters
+// create continent checkbox filters
 
 const continents = ["Asia", "North America", "Europe"];
 
@@ -128,7 +128,7 @@ continents.forEach((continent) => {
     continentCheckboxes.appendChild(continentCheckbox);
   });
 
-// material checkbox filters
+// create material checkbox filters
 
 const materials = ["Ceramic", "Metal", "Plastic", "Vinyl", "Wood"];
 
@@ -157,18 +157,19 @@ let updateData = () => {
   let tickedContinents = [];
   let tickedMaterials = [];
 
-  let allCheckboxes = document.querySelectorAll("input[type=checkbox]:checked");
-  allCheckboxes.forEach((checkbox) => {
-    // If the checkbox is a continent filter, add it to the continents array
-    if (checkbox.id === "Asia" || checkbox.id === "North America" || checkbox.id === "Europe") {
-      tickedContinents.push(checkbox.id);
+  let tickedCheckboxes = document.querySelectorAll("input[type=checkbox]:checked");
+  tickedCheckboxes.forEach((tickedCheckbox) => {
+    
+    if (tickedCheckbox.id === "Asia" || tickedCheckbox.id === "North America" || tickedCheckbox.id === "Europe") {
+      tickedContinents.push(tickedCheckbox.id);
     }
-    // If the checkbox is a material filter, add it to the materials array
-    if (checkbox.id === "Ceramic" || checkbox.id === "Metal" || checkbox.id === "Plastic" || checkbox.id === "Vinyl" || checkbox.id === "Wood") {
-      tickedMaterials.push(checkbox.id);
+
+    if (tickedCheckbox.id === "Ceramic" || tickedCheckbox.id === "Metal" || tickedCheckbox.id === "Plastic" || tickedCheckbox.id === "Vinyl" || tickedCheckbox.id === "Wood") {
+      tickedMaterials.push(tickedCheckbox.id);
     }
   });
 
+  // display magnets whose checkboxes are checked (or not if they are not checked)
   let allMagnets = document.querySelectorAll(".magnet");
 
   allMagnets.forEach((magnet) => {
@@ -183,6 +184,8 @@ let updateData = () => {
     }
   });
 
+  // with every checkbox interaction..
+ // find and push visible magnets into array 
   let visibleMagnets = [];
   
 allMagnets.forEach((magnet) => {
@@ -193,6 +196,7 @@ allMagnets.forEach((magnet) => {
 
 console.log(visibleMagnets.length);
 
+// update positionings
 for (let i = 0; i < visibleMagnets.length; i++) {
   if (i % 2 === 1) {
     visibleMagnets[i].style.transform = "translateY(50%)";
@@ -203,5 +207,22 @@ for (let i = 0; i < visibleMagnets.length; i++) {
 
 };
 
-let allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-allCheckboxes.forEach((checkbox) => checkbox.addEventListener("change", updateData));
+let tickedCheckboxes = document.querySelectorAll("input[type=checkbox]");
+tickedCheckboxes.forEach((checkbox) => checkbox.addEventListener("change", updateData));
+
+// dropdown window
+let sortData = (e) => {
+  gallery.innerHTML = "";
+  const sortOrder = e.target.value;
+  const isAscending = sortOrder === "a-z";
+  magnets.sort((a, b) =>
+    isAscending
+      ? a.title.localeCompare(b.title)
+      : b.title.localeCompare(a.title)
+  );
+  renderMagnets(magnets);
+};
+
+let sortDropdown = document.getElementById("sortDropdown");
+
+sortDropdown.addEventListener("change", sortData);

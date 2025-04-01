@@ -37,6 +37,21 @@ hr {
   width: 20vw;
   margin-left: 20px;
   }
+
+  .continent-checkboxes, .material-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  
+  /* checkbox */
+  
+  .continentCheckbox , .materialCheckbox {
+    margin-right: 15px;
+    line-height: 32px;
+    white-space: nowrap;
+  }
+  
   
 
 .gallery {
@@ -95,21 +110,6 @@ img {
 p {
   margin-bottom: 50px;
 }
-
-.continent-checkboxes, .material-checkboxes {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-}
-
-/* checkbox */
-
-.continentCheckbox , .materialCheckbox {
-  margin-right: 15px;
-  line-height: 32px;
-  white-space: nowrap;
-}
-
 
 
 /* radio button design */
