@@ -66,6 +66,7 @@ hr {
 }
 
 .description {
+  height: 100%;
   position: absolute;
   box-sizing: border-box;
   padding: 60px;
