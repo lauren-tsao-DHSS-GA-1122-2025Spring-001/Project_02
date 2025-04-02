@@ -208,7 +208,7 @@ let updateData = () => {
   });
 
   // with every checkbox interaction..
-  // find and push visible magnets into array
+  // find and push visible magnets into array..
   let visibleMagnets = [];
 
   allMagnets.forEach((magnet) => {
@@ -219,7 +219,7 @@ let updateData = () => {
 
   console.log(visibleMagnets.length);
 
-  // update positionings
+  // .. and update positionings
   for (let i = 0; i < visibleMagnets.length; i++) {
     if (i % 2 === 1) {
       visibleMagnets[i].style.transform = "translateY(50%)";
@@ -234,7 +234,7 @@ tickedCheckboxes.forEach((checkbox) =>
   checkbox.addEventListener("change", updateData)
 );
 
-// DROPDOWN WINDOW credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/
+// DROPDOWN WINDOW (credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/)
 document.addEventListener("DOMContentLoaded", () => {
   const dropdownMenu = document.querySelector(".dropdown-menu");
 
@@ -246,10 +246,13 @@ document.addEventListener("DOMContentLoaded", () => {
   ///// show dropdown contents on click /////
   // function to toggle visibility of dropdown contents
   const toggleDropdown = (expand = null) => {
-    const isOpen =
-      expand !== null ? expand : dropdownContents.classList.contains("hidden");
-    dropdownContents.classList.toggle("hidden", !isOpen);
-    dropdownButton.setAttribute("aria-expanded", isOpen);
+    const isVisible =
+    // condition: is expand not null ?
+    // yes = exp01 = return value of expand (true/false)
+    // no = exp02 = find the class named "hidden", in the dropdownContents
+      expand !== null ? expand : dropdownContents.classList.contains("hidden"); // condition ? exp01 : exp02
+    // target the class "hidden" in dropdownContents, and toggle it to the opposite of its current value (like a switch)
+    dropdownContents.classList.toggle("hidden", !isVisible);
   };
 
   // listen for click to trigger above function
@@ -260,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ///// update selected option on click /////
   // function to update selected option (ending with closing of dropdown contents)
+  
   const updateSelectedOption = (selectedOption) => {
     dropdownOptions.forEach((dropdownOption) => dropdownOption.classList.remove("selected"));
     selectedOption.classList.add("selected");
@@ -274,14 +278,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Function to handle sorting logic
+// function to sort magnets by a-z / z-a (to be applied to the updateSelectedOption function)
 let sortData = (sortOrder) => {
-  gallery.innerHTML = ""; // Clear out the HTML
-  const isAscending = sortOrder === "a-z"; // Check if it's A-Z or Z-A
+  gallery.innerHTML = "";
+  const isAscending = sortOrder === "a-z";
   magnets.sort((a, b) =>
     isAscending
-      ? a.title.localeCompare(b.title)
-      : b.title.localeCompare(a.title)
-  ); // Sorting logic
-  renderMagnets(magnets); // Re-render the books after sorting
+      ? a.title.localeCompare(b.title) // ascending if true
+      : b.title.localeCompare(a.title) // descending if false (i.e reverse)
+  );
+  renderMagnets(magnets);
 };
