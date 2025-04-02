@@ -98,7 +98,7 @@ const magnets = [
 let gallery = document.querySelector(".gallery");
 
 // give each magnet a div and insert into the gallery
-function renderMagnets(data) {
+let renderMagnets = (data) => {
   data.forEach((magnet) => {
     let newDiv = document.createElement("div");
     newDiv.setAttribute("data-continent", magnet.continent);
@@ -115,8 +115,6 @@ function renderMagnets(data) {
 };
 
 renderMagnets(magnets);
-
-
 
 // create continent checkbox filters
 
@@ -164,14 +162,13 @@ materials.forEach((material) => {
 
 // CHECKBOX INTERACTIONS
 // find ticked checkboxes
-function updateData() {
+let updateData = () => {
   let tickedContinents = [];
   let tickedMaterials = [];
 
   let tickedCheckboxes = document.querySelectorAll(
     "input[type=checkbox]:checked"
   );
-
   tickedCheckboxes.forEach((tickedCheckbox) => {
     if (
       tickedCheckbox.id === "Asia" ||
@@ -193,36 +190,43 @@ function updateData() {
   });
 
   // display magnets whose checkboxes are checked (or not if they are not checked)
-  let tickedMagnets = document.querySelectorAll(".magnet");
-  let visibleMagnets = [];
+  let allMagnets = document.querySelectorAll(".magnet");
 
-  tickedMagnets.forEach((tickedMagnet) => {
-    let tickedMagnetContinent = tickedMagnet.getAttribute("data-continent");
-    let tickedMagnetMaterial = tickedMagnet.getAttribute("data-material");
+  allMagnets.forEach((magnet) => {
+    let magnetContinent = magnet.getAttribute("data-continent");
+    let magnetMaterial = magnet.getAttribute("data-material");
 
     if (
       (tickedContinents.length == 0 && tickedMaterials.length == 0) ||
-      tickedContinents.includes(tickedMagnetContinent) ||
-      tickedMaterials.includes(tickedMagnetMaterial)
+      tickedContinents.includes(magnetContinent) ||
+      tickedMaterials.includes(magnetMaterial)
     ) {
-      tickedMagnet.style.display = "block";
+      magnet.style.display = "block";
     } else {
-      tickedMagnet.style.display = "none";
-    }
-
-    if (tickedMagnet.style.display === "block") {
-      visibleMagnets.push(tickedMagnet);
-    }
-
-    // update y-positions
-    for (let i = 0; i < visibleMagnets.length; i++) {
-      if (i % 2 === 1) {
-        visibleMagnets[i].style.transform = "translateY(50%)";
-      } else {
-        visibleMagnets[i].style.transform = "none";
-      }
+      magnet.style.display = "none";
     }
   });
+
+  // with every checkbox interaction..
+  // find and push visible magnets into array..
+  let visibleMagnets = [];
+
+  allMagnets.forEach((magnet) => {
+    if (magnet.style.display === "block") {
+      visibleMagnets.push(magnet);
+    }
+  });
+
+  console.log(visibleMagnets.length);
+
+  // .. and update positionings
+  for (let i = 0; i < visibleMagnets.length; i++) {
+    if (i % 2 === 1) {
+      visibleMagnets[i].style.transform = "translateY(50%)";
+    } else {
+      visibleMagnets[i].style.transform = "none";
+    }
+  }
 };
 
 let tickedCheckboxes = document.querySelectorAll("input[type=checkbox]");
@@ -231,7 +235,7 @@ tickedCheckboxes.forEach((checkbox) =>
 );
 
 // DROPDOWN WINDOW (credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/)
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const dropdownMenu = document.querySelector(".dropdown-menu");
 
   const dropdownButton = dropdownMenu.querySelector(".dropdown-button");
@@ -241,51 +245,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
   ///// show dropdown contents on click /////
   // function to toggle visibility of dropdown contents
-  function toggleDropdown(expand = null) {
-    let isVisible =
-      // condition: is expand not null ?
-      // yes = exp01 = return value of expand (true/false)
-      // no = exp02 = find the class named "hidden", in the dropdownContents
+  const toggleDropdown = (expand = null) => {
+    const isVisible =
+    // condition: is expand not null ?
+    // yes = exp01 = return value of expand (true/false)
+    // no = exp02 = find the class named "hidden", in the dropdownContents
       expand !== null ? expand : dropdownContents.classList.contains("hidden"); // condition ? exp01 : exp02
     // target the class "hidden" in dropdownContents, and toggle it to the opposite of its current value (like a switch)
     dropdownContents.classList.toggle("hidden", !isVisible);
-  }
+  };
 
   // listen for click to trigger above function
-  dropdownButton.addEventListener("click", function () {
+  dropdownButton.addEventListener("click", () => {
     toggleDropdown();
   });
 
+
   ///// update selected option on click /////
   // function to update selected option (ending with closing of dropdown contents)
-
-  function updateSelectedOption(selectedOption) {
-    dropdownOptions.forEach(dropdownOption => {
-      dropdownOption.classList.remove("selected");
-    });
+  
+  const updateSelectedOption = (selectedOption) => {
+    dropdownOptions.forEach((dropdownOption) => dropdownOption.classList.remove("selected"));
     selectedOption.classList.add("selected");
     dropdownSelected.textContent = selectedOption.textContent;
     sortData(selectedOption.getAttribute("value"));
     toggleDropdown(false);
-  }
+  };
 
   // listen for click to trigger above function
-  dropdownOptions.forEach(selectedOption => {
-    selectedOption.addEventListener("click", function () {
-      updateSelectedOption(selectedOption);
-    });
+  dropdownOptions.forEach((selectedOption) => {
+    selectedOption.addEventListener("click", () => updateSelectedOption(selectedOption));
   });
 });
 
 // function to sort magnets by a-z / z-a (to be applied to the updateSelectedOption function)
-function sortData(sortOrder) {
+let sortData = (sortOrder) => {
   gallery.innerHTML = "";
   const isAscending = sortOrder === "a-z";
-  magnets.sort(
-    (a, b) =>
-      isAscending
-        ? a.title.localeCompare(b.title) // ascending if true
-        : b.title.localeCompare(a.title) // descending if false (i.e reverse)
+  magnets.sort((a, b) =>
+    isAscending
+      ? a.title.localeCompare(b.title) // ascending if true
+      : b.title.localeCompare(a.title) // descending if false (i.e reverse)
   );
   renderMagnets(magnets);
-}
+};
