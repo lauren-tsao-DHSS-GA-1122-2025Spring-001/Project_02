@@ -1,7 +1,3 @@
-// ###
-// From the "05_changing_display_with_dropdown"
-// ###
-
 const magnets = [
   {
     title: "Qatar",
@@ -95,6 +91,7 @@ const magnets = [
   },
 ];
 
+// CREATE MAGNET GALLERY
 let gallery = document.querySelector(".gallery");
 
 // give each magnet a div and insert into the gallery
@@ -112,17 +109,15 @@ function renderMagnets(data) {
           </div><img src="${magnet.image}" alt="${magnet.title}" />`;
     gallery.append(newDiv);
   });
-};
+}
 
 renderMagnets(magnets);
 
-
-
-// create continent checkbox filters
+// CREATE CONTINENT CHECKBOX FILTERS
 
 const continents = ["Asia", "North America", "Europe"];
 
-let continentCheckboxes = document.querySelector(".continent-checkboxes");
+let conCheckboxes = document.querySelector(".continent-checkboxes");
 
 continents.forEach((continent) => {
   let checkbox = document.createElement("input");
@@ -132,19 +127,19 @@ continents.forEach((continent) => {
   let label = document.createElement("label");
   label.textContent = continent;
 
-  let continentCheckbox = document.createElement("div");
-  continentCheckbox.classList.add("continentCheckbox");
-  continentCheckbox.appendChild(checkbox);
-  continentCheckbox.appendChild(label);
+  let conCheckbox = document.createElement("div");
+  conCheckbox.classList.add("continent-checkbox");
+  conCheckbox.appendChild(checkbox);
+  conCheckbox.appendChild(label);
 
-  continentCheckboxes.appendChild(continentCheckbox);
+  conCheckboxes.appendChild(conCheckbox);
 });
 
-// create material checkbox filters
+// CREATE MATERIAL CHECKBOX FILTERS
 
 const materials = ["Ceramic", "Metal", "Plastic", "Vinyl", "Wood"];
 
-let materialCheckboxes = document.querySelector(".material-checkboxes");
+let matCheckboxes = document.querySelector(".material-checkboxes");
 
 materials.forEach((material) => {
   let checkbox = document.createElement("input");
@@ -154,90 +149,90 @@ materials.forEach((material) => {
   let label = document.createElement("label");
   label.textContent = material;
 
-  let materialCheckbox = document.createElement("div");
-  materialCheckbox.classList.add("materialCheckbox");
-  materialCheckbox.appendChild(checkbox);
-  materialCheckbox.appendChild(label);
+  let matCheckbox = document.createElement("div");
+  matCheckbox.classList.add("material-checkbox");
+  matCheckbox.appendChild(checkbox);
+  matCheckbox.appendChild(label);
 
-  materialCheckboxes.appendChild(materialCheckbox);
+  matCheckboxes.appendChild(matCheckbox);
 });
 
 // CHECKBOX INTERACTIONS
-// find ticked checkboxes
-function updateData() {
-  let tickedContinents = [];
-  let tickedMaterials = [];
+  // find checked (ckd) checkboxes
+  function updateData() {
+    let ckdContinents = [];
+    let ckdMaterials = [];
 
-  let tickedCheckboxes = document.querySelectorAll(
-    "input[type=checkbox]:checked"
+    let ckdCheckboxes = document.querySelectorAll(
+      "input[type=checkbox]:checked"
+    );
+
+    ckdCheckboxes.forEach((checkbox) => {
+      if (
+        checkbox.id === "Asia" ||
+        checkbox.id === "North America" ||
+        checkbox.id === "Europe"
+      ) {
+        ckdContinents.push(checkbox.id);
+      }
+
+      if (
+        checkbox.id === "Ceramic" ||
+        checkbox.id === "Metal" ||
+        checkbox.id === "Plastic" ||
+        checkbox.id === "Vinyl" ||
+        checkbox.id === "Wood"
+      ) {
+        ckdMaterials.push(checkbox.id);
+      }
+    });
+
+    // display/hide magnets whose checkboxes are checked/unchecked
+    let allMagnets = document.querySelectorAll(".magnet");
+    let visibleMagnets = [];
+
+    allMagnets.forEach((magnet) => {
+      let conMagnet = magnet.getAttribute("data-continent");
+      let matMagnet = magnet.getAttribute("data-material");
+
+      if (
+        (ckdContinents.length == 0 && ckdMaterials.length == 0) ||
+        ckdContinents.includes(conMagnet) ||
+        ckdMaterials.includes(matMagnet)
+      ) {
+        magnet.style.display = "block";
+      } else {
+        magnet.style.display = "none";
+      }
+
+      if (magnet.style.display === "block") {
+        visibleMagnets.push(magnet);
+      }
+
+      // update odd magnet y-positions (odd because javascript takes in 0 as 1st)
+      for (let i = 0; i < visibleMagnets.length; i++) {
+        if (i % 2 === 1) {
+          visibleMagnets[i].style.transform = "translateY(50%)";
+        } else {
+          visibleMagnets[i].style.transform = "none";
+        }
+      }
+    });
+  }
+
+  let ckdCheckboxes = document.querySelectorAll("input[type=checkbox]");
+  ckdCheckboxes.forEach((checkbox) =>
+    checkbox.addEventListener("change", updateData)
   );
 
-  tickedCheckboxes.forEach((tickedCheckbox) => {
-    if (
-      tickedCheckbox.id === "Asia" ||
-      tickedCheckbox.id === "North America" ||
-      tickedCheckbox.id === "Europe"
-    ) {
-      tickedContinents.push(tickedCheckbox.id);
-    }
+  // DROPDOWN WINDOW (credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/)
 
-    if (
-      tickedCheckbox.id === "Ceramic" ||
-      tickedCheckbox.id === "Metal" ||
-      tickedCheckbox.id === "Plastic" ||
-      tickedCheckbox.id === "Vinyl" ||
-      tickedCheckbox.id === "Wood"
-    ) {
-      tickedMaterials.push(tickedCheckbox.id);
-    }
-  });
-
-  // display magnets whose checkboxes are checked (or not if they are not checked)
-  let tickedMagnets = document.querySelectorAll(".magnet");
-  let visibleMagnets = [];
-
-  tickedMagnets.forEach((tickedMagnet) => {
-    let tickedMagnetContinent = tickedMagnet.getAttribute("data-continent");
-    let tickedMagnetMaterial = tickedMagnet.getAttribute("data-material");
-
-    if (
-      (tickedContinents.length == 0 && tickedMaterials.length == 0) ||
-      tickedContinents.includes(tickedMagnetContinent) ||
-      tickedMaterials.includes(tickedMagnetMaterial)
-    ) {
-      tickedMagnet.style.display = "block";
-    } else {
-      tickedMagnet.style.display = "none";
-    }
-
-    if (tickedMagnet.style.display === "block") {
-      visibleMagnets.push(tickedMagnet);
-    }
-
-    // update y-positions
-    for (let i = 0; i < visibleMagnets.length; i++) {
-      if (i % 2 === 1) {
-        visibleMagnets[i].style.transform = "translateY(50%)";
-      } else {
-        visibleMagnets[i].style.transform = "none";
-      }
-    }
-  });
-};
-
-let tickedCheckboxes = document.querySelectorAll("input[type=checkbox]");
-tickedCheckboxes.forEach((checkbox) =>
-  checkbox.addEventListener("change", updateData)
-);
-
-// DROPDOWN WINDOW (credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/)
-document.addEventListener("DOMContentLoaded", function () {
   const dropdownMenu = document.querySelector(".dropdown-menu");
 
   const dropdownButton = dropdownMenu.querySelector(".dropdown-button");
   const dropdownContents = dropdownMenu.querySelector(".dropdown-contents");
-  const dropdownOptions = dropdownContents.querySelectorAll("li");
-  const dropdownSelected = dropdownButton.querySelector(".dropdown-selected");
+  const ddOptions = dropdownContents.querySelectorAll("li");
+  const ddSelected = dropdownButton.querySelector(".dropdown-selected");
 
   ///// show dropdown contents on click /////
   // function to toggle visibility of dropdown contents
@@ -260,22 +255,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // function to update selected option (ending with closing of dropdown contents)
 
   function updateSelectedOption(selectedOption) {
-    dropdownOptions.forEach(dropdownOption => {
-      dropdownOption.classList.remove("selected");
+    ddOptions.forEach((ddOption) => {
+      ddOption.classList.remove("selected");
     });
     selectedOption.classList.add("selected");
-    dropdownSelected.textContent = selectedOption.textContent;
+    ddSelected.textContent = selectedOption.textContent;
     sortData(selectedOption.getAttribute("value"));
     toggleDropdown(false);
   }
 
   // listen for click to trigger above function
-  dropdownOptions.forEach(selectedOption => {
+  ddOptions.forEach((selectedOption) => {
     selectedOption.addEventListener("click", function () {
       updateSelectedOption(selectedOption);
     });
   });
-});
+
 
 // function to sort magnets by a-z / z-a (to be applied to the updateSelectedOption function)
 function sortData(sortOrder) {
@@ -287,5 +282,6 @@ function sortData(sortOrder) {
         ? a.title.localeCompare(b.title) // ascending if true
         : b.title.localeCompare(a.title) // descending if false (i.e reverse)
   );
+
   renderMagnets(magnets);
 }

@@ -2,7 +2,7 @@ html {
   font-family: Helvetica;
 }
 
-/* main heading */
+/* MAIN  HEADING */
 .heading {
   box-sizing: border-box;
   padding-right: 30px;
@@ -38,21 +38,23 @@ hr {
   margin-left: 20px;
   }
   
-  /* checkboxes */
-  
-  .continentCheckbox , .materialCheckbox {
+  /* CHECKBOXES */
+  /* javascript names = conCheckbox, matCheckbox */
+  .continent-checkbox , .material-checkbox {
     margin-right: 15px;
     line-height: 32px;
     white-space: nowrap;
   }
 
+    /* javascript names = conCheckboxes, matCheckboxes */
   .continent-checkboxes, .material-checkboxes {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 50px;
   }
 
-/* checkbox design */
+/* CHECKBOX DESIGN */
+/* javascript name = checkbox */
 /* unchecked appearance */
 input {
   appearance: none;
@@ -69,16 +71,18 @@ input {
   top: 4px;
 }
 
-input:hover {
-  cursor: pointer;
-}
-
 /* checked appearance */
 input:checked {
   border: 6px solid black;
 }
 
-/* dropdown menu */
+/* mouse hover design */
+input:hover {
+  cursor: pointer;
+}
+
+/* DROPDOWN MENU */
+/* javascript name = dropdownMenu */
 .dropdown-menu {
   position: relative;
   display: inline-block;
@@ -86,6 +90,7 @@ input:checked {
   max-width: 100%;
 }
 
+/* javascript name = dropdownButton */
 .dropdown-button {
   font-size: 15px;
   font-family: Helvetica, sans-serif;
@@ -107,6 +112,7 @@ input:checked {
   transition: transform ease-in-out 0.3s;
 }
 
+/* javascript name = dropdownContents */
 .dropdown-contents {
   position: absolute;
   top: 100%;
@@ -120,6 +126,7 @@ input:checked {
   overflow-y: auto;
 }
 
+/* javascript name = ddOptions */
 .dropdown-contents li {
   padding: 10px;
   cursor: pointer;
@@ -142,7 +149,8 @@ input:checked {
   display: none;
 }
 
-/* magnet gallery */
+/* MAGNET GALLERY */
+/* javascript name = gallery */
 .gallery {
   position: relative;
   left: 23vw;
