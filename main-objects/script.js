@@ -225,7 +225,7 @@ materials.forEach((material) => {
     checkbox.addEventListener("change", updateData)
   );
 
-  // DROPDOWN WINDOW (credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/)
+  // DROPDOWN MENU (credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/)
 
   const dropdownMenu = document.querySelector(".dropdown-menu");
 
