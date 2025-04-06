@@ -91,6 +91,12 @@ const magnets = [
   },
 ];
 
+// DYNAMIC TITLE NUMBER
+
+let magnetCount = document.querySelector(".heading h1");
+magnetCount.textContent = magnets.length;
+
+
 // CREATE MAGNET GALLERY
 let gallery = document.querySelector(".gallery");
 
@@ -112,6 +118,7 @@ function renderMagnets(data) {
 }
 
 renderMagnets(magnets);
+
 
 // CREATE CONTINENT CHECKBOX FILTERS
 
@@ -285,3 +292,8 @@ function sortData(sortOrder) {
 
   renderMagnets(magnets);
 }
+
+// DATE LAST MODIFIED
+let dateModified = document.querySelector("#date-modified");
+let noTimestamp = document.lastModified
+dateModified.textContent = noTimestamp.slice(0, 10);
