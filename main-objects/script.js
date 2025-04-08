@@ -208,23 +208,13 @@ materials.forEach((material) => {
         ckdMaterials.includes(matMagnet)
       ) {
         magnet.style.display = "block";
+        visibleMagnets.push(magnet);
       } else {
         magnet.style.display = "none";
       }
-
-      if (magnet.style.display === "block") {
-        visibleMagnets.push(magnet);
-      }
-
-      // update odd magnet y-positions (odd because javascript takes in 0 as 1st)
-      for (let i = 0; i < visibleMagnets.length; i++) {
-        if (i % 2 === 1) {
-          visibleMagnets[i].style.transform = "translateY(50%)";
-        } else {
-          visibleMagnets[i].style.transform = "none";
-        }
-      }
     });
+
+    yPositionUpdate(visibleMagnets);
   }
 
   let ckdCheckboxes = document.querySelectorAll("input[type=checkbox]");
@@ -291,6 +281,39 @@ function sortData(sortOrder) {
   );
 
   renderMagnets(magnets);
+}
+
+
+// SEARCH BAR
+function myFunction() {
+  let input = document.getElementById('myInput');
+  let filter = input.value.toUpperCase();
+  let magnetDivs = document.querySelectorAll(".magnet");
+
+  let visibleMagnets = [];
+
+  magnetDivs.forEach((magnet) => {
+    let title = magnet.querySelector(".description h3").textContent || "";
+    if (title.toUpperCase().indexOf(filter) > -1) {
+      magnet.style.display = "block";
+      visibleMagnets.push(magnet);
+    } else {
+      magnet.style.display = "none";
+    }
+  });
+
+  yPositionUpdate(visibleMagnets);
+}
+
+// update odd magnet y-positions (odd because javascript takes in 0 as 1st)
+function yPositionUpdate(visibleMagnets) {
+  for (let i = 0; i < visibleMagnets.length; i++) {
+    if (i % 2 === 1) {
+      visibleMagnets[i].style.transform = "translateY(50%)";
+    } else {
+      visibleMagnets[i].style.transform = "none";
+    }
+  }
 }
 
 // DATE LAST MODIFIED

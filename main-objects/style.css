@@ -154,14 +154,18 @@ input:hover {
 }
 
 /* SEARCH BAR */
+.search-bar {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  max-width: 100%;
+}
+
 #myInput {
   all: unset;
   position: relative;
   font-size: 15px;
   font-family: Helvetica, sans-serif;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 88%;
   padding: 10px 15px;
   border: 1px solid black;
