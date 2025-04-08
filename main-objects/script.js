@@ -285,14 +285,14 @@ function sortData(sortOrder) {
 
 
 // SEARCH BAR
-function myFunction() {
-  let input = document.getElementById('myInput');
-  let filter = input.value.toUpperCase();
-  let magnetDivs = document.querySelectorAll(".magnet");
-
+function searchText() {
+  let allMagnets = document.querySelectorAll(".magnet");
   let visibleMagnets = [];
 
-  magnetDivs.forEach((magnet) => {
+  let input = document.getElementById('input-text');
+  let filter = input.value.toUpperCase();
+
+  allMagnets.forEach((magnet) => {
     let title = magnet.querySelector(".description h3").textContent || "";
     if (title.toUpperCase().indexOf(filter) > -1) {
       magnet.style.display = "block";

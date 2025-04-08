@@ -161,7 +161,7 @@ input:hover {
   max-width: 100%;
 }
 
-#myInput {
+#input-text {
   all: unset;
   position: relative;
   font-size: 15px;
