@@ -3,7 +3,7 @@
 ## Deliverables
 
 - Link to website: Please click [here](https://lauren-tsao-dhss-ga-1122-2025spring-001.github.io/Project_02/main-objects/)
-- Link to reflection: Please click [here](https://docs.google.com/document/d/1cQ9KsuarML8YXOb4hVDsr-qlJPgX5Ky4Bqb_XO2KMMw/edit?usp=sharing)
+- Link to reflection: Please click [here](https://drive.google.com/file/d/1Fgq3-ewADlP-mF7ir5l8HDF4yXcz1RBR/view?usp=sharing)
 
 ### Week 07 - Milestone 01
 **Write a one-paragraph idea for your visual collection**
