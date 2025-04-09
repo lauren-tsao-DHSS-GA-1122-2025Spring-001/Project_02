@@ -92,7 +92,6 @@ const magnets = [
 ];
 
 // DYNAMIC TITLE NUMBER
-
 let magnetCount = document.querySelector(".heading h1");
 magnetCount.textContent = magnets.length;
 
@@ -120,8 +119,8 @@ function renderMagnets(data) {
 renderMagnets(magnets);
 
 
-// CREATE CONTINENT CHECKBOX FILTERS
-
+// CREATE CHECKBOX FILTERS
+// continent checkboxes
 const continents = ["Asia", "North America", "Europe"];
 
 let conCheckboxes = document.querySelector(".continent-checkboxes");
@@ -142,8 +141,7 @@ continents.forEach((continent) => {
   conCheckboxes.appendChild(conCheckbox);
 });
 
-// CREATE MATERIAL CHECKBOX FILTERS
-
+// material checkboxes
 const materials = ["Ceramic", "Metal", "Plastic", "Vinyl", "Wood"];
 
 let matCheckboxes = document.querySelector(".material-checkboxes");
@@ -223,7 +221,6 @@ materials.forEach((material) => {
   );
 
   // DROPDOWN MENU (credit: https://blog.logrocket.com/creating-custom-select-dropdown-css/)
-
   const dropdownMenu = document.querySelector(".dropdown-menu");
 
   const dropdownButton = dropdownMenu.querySelector(".dropdown-button");
@@ -290,11 +287,11 @@ function searchText() {
   let visibleMagnets = [];
 
   let input = document.getElementById('input-text');
-  let filter = input.value.toUpperCase();
+  let filter = input.value.toUpperCase(); // convert all letters of value to uppercase
 
   allMagnets.forEach((magnet) => {
     let title = magnet.querySelector(".description h3").textContent || "";
-    if (title.toUpperCase().indexOf(filter) > -1) {
+    if (title.toUpperCase().indexOf(filter) > -1) { // reminder: javascript counts '0' as '1', so '-1' is '0'
       magnet.style.display = "block";
       visibleMagnets.push(magnet);
     } else {
